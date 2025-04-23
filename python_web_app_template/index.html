@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Python Web App Template</title>
+  </head>
+
+<main id='main'>
+  <h1>Dan Harper - Python Web App Template</h1>
+  <p>This template can be used to create new web apps based on python scripts.</p>
+  <p>It is intended for use with code that follows a structure that looks like 1). Read in a file 2). Do some type of data processing 3). Write a new file.</p>
+  <hr>
+
+  <p>Steps to create a new we web app from existing python code</p>
+  <p><b>1. Clone the "pythonWebApps" git repo</b></p>
+  <p><b>2. Copy the "python web app template" folder and give it a new name to reflect your new web app</b></p>
+  <p><b>3. Add a function called "js_entry_point()" to your python code.</b></p>
+  <p>The "js_entry_point()" function should take one argument, which should be a list of strings - where these strings are paths to the input files</p>
+  <p>When passed into the function, this list of strings will start in a javascript format. You will need to add one line of the form "listOfStrings = listOfStrings.to_py()" to properly format the list for use in python</p>
+  <p>The function should return a list of strings, which are the paths where the new files were saved</p>
+  <p><b>4. Open index.js and copy/paste your python code into the "pythonCode" variable at the top of the file</b></p>
+  <p>Your code will be run directly in the browser on the page load, including any code in a "if '__name__' == __main__" block</p>
+  <p><b>5. Scroll down to the "setupPython()" and comment in/out the lines that look like "await micropip.install('numpy')"</b></p>
+  <p>These control which dependencies are available to your script and you should comment out anything that you aren't using</p>
+  <p>If the package is not listed already, you can add it in 2 ways: </p>
+  <p>---1). If the package is listed on https://pyodide.org/en/stable/usage/packages-in-pyodide.html, you can install it with the package's name</p>
+  <p>---2). If it is a pure python package, you can install it by including a URL to a .whl file of the package. This .whl could be from pip or conda, for example</p>
+  <p><b>6. In index.html, edit the "title" line to match a name that reflects what your code does. You can also edit the "p" lines to have a useful description of what types of files to upload and how to use your app</b></p>
+  <p><b>7. Open index.html in a browser to test your app</b></p>
+  <p>The app can now be used stand-alone by directly sharing your new folder. If you want to add your app to the overall web apps page, continue with the following steps:</p>
+  <p><b>8. In the base "python_web_app_template" directory, add a new row to the "python web apps" table. The easiest way to do this is to copy and paste the code from an existing row</b></p>
+  <p><b>9. Commit and push your changes to github, changes may take up to 10 minutes to be reflected</b></p>
+  <hr>
+
+  <script src=https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js></script>
+  <script src="index.js"></script>
+</main>
+
+</html>

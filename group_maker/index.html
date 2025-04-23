@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>New Group Finder</title>
+    <link href=https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css rel="stylesheet">
+  </head>
+
+<main> <div class="container mx-auto pb-8 pt-8" id='main'>
+  <h1 class="text-3xl font-bold dark:text-white">New Group Finder - by Dan Harper</h1>
+  <p class="text-l dark:text-white">(Hi Caroline!)</p>
+  <hr class="bg-gray-500 mb-4 h-1 rounded-lg">
+
+  <p class="text-gray-900 dark:text-gray-400 font-bold">This is a web app that tries to find new ways to form groups out of a list of people.</p>
+  <p class="text-gray-900 dark:text-gray-400 font-bold">To use it, you will need a .csv file (created using Excel, Google Sheets, etc.) that looks like this:</p>
+  <img class="h-auto max-w-full rounded-lg shadow-xl dark:shadow-gray-800" src="example_input.png" alt="Example CSV file">
+
+  <p class="text-gray-900 dark:text-gray-400">The first column header must be "Partipant" and the other column headers must fit the format "Session #"</p>
+  <p class="text-gray-900 dark:text-gray-400">For example this input tells us that the groups for Session 1 were:
+  <p class="text-gray-900 dark:text-gray-400 ml-4">1). Sarah, George, and Bart</p>
+  <p class="text-gray-900 dark:text-gray-400 ml-4">2). Cliff and Peter</p>
+  <p class="text-gray-900 dark:text-gray-400 ml-4">3). Andrew missed Session 1</p>
+  <p class="text-gray-900 dark:text-gray-400 mb-4">This web app will look for a new group with the fewest number of people who have already been in a group together.</p>
+
+  <p class="text-gray-900 dark:text-gray-400">A few  detailed things to know:</p>
+  <p class=>1). It isn't alway possible to make a new group where no people have already been in a group together.</p>
+  <p class="text-gray-900 dark:text-gray-400 ml-4">2). The approach in this web app uses randomness. If you run it more than once, you will get a different result. It isn't gauranteed that this web app will find the best new group on the first try</p>
+  <p class="text-gray-900 dark:text-gray-400 ml-4">3). One of the boxes below lets you set a max amount of time to spend looking for a new group. For relatively simple cases (for example, less than 30 people, less than 5 previous groups), 10 seconds is plenty and more time won't help. For more complicated cases, more time can help, but there's no value in running this with a very long time limit (it would be better to run it more than once with shorter time limits)</p>
+  <p class="text-gray-900 dark:text-gray-400 ml-4 mb-4">4). If you want to see what's going on under the hood, right click the page, then click "inspect", then click "console"<p>
+
+  <p class="text-gray-900 dark:text-gray-400 font-bold">When you're ready, set the two numbers below and click the "Choose File" button and upload you're csv</p>
+  <p class="text-gray-900 dark:text-gray-400 font-bold ml-4">It might take a few seconds for the button to appear</p>
+  <p class="text-gray-900 dark:text-gray-400 font-bold ml-4">While you're waiting for the button to appear, the number inputs below might not be very responsive</p>
+  <hr class="bg-gray-500 mb-4 h-1 rounded-lg">
+
+  <label class="text-gray-900 dark:text-gray-400">Size of groups to make: </label>
+  <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg p-1 w-8" type="number" id="groupSize" name="groupSize" value="5">
+  <br>
+  <label class="text-gray-900 dark:text-gray-400">Max amount of time this web app should spend looking for the best group (seconds): </label>
+  <input  type="number" id="maxAmountOfTime" name="maxAmountOfTime" value="5">
+  <hr class="bg-gray-500 mb-4 h-1 rounded-lg">
+
+  <script src=https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js></script>
+  <script src="index.js"></script>
+</div></main>
+
+</html>
